@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidTree</string>
+    <string name="drawer_header_title">Diana</string>
+    <string name="menu_home_title">主页</string>
+    <string name="menu_setting_title">设置</string>
+</resources>
