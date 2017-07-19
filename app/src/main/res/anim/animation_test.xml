@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+android:interpolator:动画集合所采用的插值器，插值器影响动画的速度（例加速减速、）
+ android:shareInterpolator:集合中的动画和集合共享一个插值器
+android:fillAfter:动画结束之后View是否停留在结束位置；
+android:duration:动画的持续时间-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:zAdjustment="normal">
+
+    <translate
+        android:duration="100"
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXDelta="100"
+        android:toYDelta="100" />
+
+    <rotate
+        android:duration="400"
+        android:fromDegrees="0"
+        android:toDegrees="90" />
+
+</set>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <!--AppBarLayout允许工具栏和其他视图（例如TabLayout提供的选项卡）
+    对标有ScrollingViewBehavior的同级视图中的滚动事件做出反应
+    scroll: 应为所有想要滚动屏幕的视图设置此标志。 对于不使用此标志的视图，
+    它们将保持固定在屏幕顶部
+    enterAlways: 此标志确保任何向下滚动将导致此视图变为可见，启用“快速返回”模式
+    enterAlwaysCollapsed:当您的视图声明了一个minHeight并且您使用此标志时，
+    您的View只能在其最小高度（即“折叠”）中输入，当滚动视图达到顶部时，才会重新展开至其完整高度
+    exitUntilCollapsed:此标志导致视图滚动，直到在退出之前“折叠”（其minHeight）
+    -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_scrollFlags="scroll|enterAlways"/>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:tabGravity="fill"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tablayout"
+        android:orientation="horizontal">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="@dimen/two_pane_width"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <FrameLayout
+            android:id="@+id/fl_detail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fat_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_search_white_18dp"/>
+
+</RelativeLayout>

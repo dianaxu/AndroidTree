@@ -4,13 +4,23 @@
         <item
             android:id="@+id/menu_home"
             android:checked="true"
-            android:icon="@drawable/selector_home"
+            android:icon="@drawable/ic_home_white"
             android:title="@string/menu_home_title" />
 
         <item
             android:id="@+id/menu_setting"
-            android:icon="@drawable/selector_home"
+            android:icon="@drawable/ic_settings_applications_white"
             android:title="@string/menu_setting_title" />
+
+        <item
+            android:id="@+id/menu_knowladge"
+            android:icon="@drawable/ic_featured_play_list_white_18dp"
+            android:title="@string/menu_knowladge_title" />
+
+        <item
+            android:id="@+id/menu_third"
+            android:icon="@drawable/ic_playlist_add_white_18dp"
+            android:title="@string/menu_third_title" />
 
     </group>
 </menu>

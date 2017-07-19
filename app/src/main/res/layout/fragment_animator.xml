@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/spacer_medium"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:showDividers="middle">
+
+        <TextView
+            style="@style/subheadTextViewStyle"
+            android:text="View动画"/>
+
+
+        <!--自定义动画-->
+        <TextView
+            style="@style/subheadTextViewStyle"
+            android:layout_marginTop="20dp"
+            android:text="自定义动画:一般不太用"/>
+
+        <Button
+            android:id="@+id/btn_start3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+
+
+        <!--帧动画-->
+        <TextView
+            style="@style/subheadTextViewStyle"
+            android:layout_marginTop="20dp"
+            android:text="帧动画：不建议使用，容易产生oom"/>
+
+        <Button
+            android:id="@+id/btn_start4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+
+    </LinearLayout>
+
+</ScrollView>

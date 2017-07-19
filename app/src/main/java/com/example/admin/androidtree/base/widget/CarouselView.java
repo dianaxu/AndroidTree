@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.CheckResult;
+import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -69,6 +70,10 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
     private static final int DOT_SELECTED_W = 8;
 
     /**
+     * 轮播图切换小圆点样式
+     */
+    private static final int DOT_BACKGROUND_RESOURCE = R.drawable.carousel_layout_dot;
+    /**
      * 默认的轮播时间
      */
     private static final int DEFAULT_TIME = 3000;
@@ -82,6 +87,11 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
      * 选中时小圆点宽度
      */
     private int IndicatorDotSelectedWidth = DOT_SELECTED_W;
+
+    /**
+     * 轮播图切换小圆点样式
+     */
+    private int IndicatorDotBackgroundRes = DOT_BACKGROUND_RESOURCE;
 
     /**
      * 设置轮播时间
@@ -134,14 +144,12 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
     };
 
 
-
-
     /**
      * 设置数据
      *
      * @param list
      */
-    public void setDate(List<Integer> list) {
+    public CarouselView setDate(List<Integer> list) {
         mShowCount = list.size();
 
         //创建ImageViews
@@ -151,43 +159,65 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
 
         mAdapter.notifyDataSetChanged();
         resetCurrentIndex();
+        return this;
     }
 
     /**
-     * 设置是否循环
+     * 设置是否循环  默认false 不循环
      *
      * @param isCycle
      */
-    public void setIsCycle(boolean isCycle) {
+    public CarouselView setIsCycle(boolean isCycle) {
         this.isCycle = isCycle;
         vpImages.setAdapter(mAdapter = new CarouselPagerAdapter(mImageViews, isCycle));
         mAdapter.notifyDataSetChanged();
         resetCurrentIndex();
+        return this;
     }
 
     /**
+     * 设置是否滑动 默认true 可滑动
+     *
      * @param isSlide
      */
-    public void setIsSlide(final boolean isSlide) {
+    public CarouselView setIsSlide(final boolean isSlide) {
         this.isSlide = isSlide;
+        return this;
     }
 
     /**
-     * 设置循环播放
+     * 设置循环播放 默认false 不自动播放
      *
      * @param isWheel
      */
-    public void setIsWheel(boolean isWheel) {
+    public CarouselView setIsWheel(boolean isWheel) {
         this.isWheel = isWheel;
+        return this;
     }
 
     /**
-     * 设置指示器是否显示
+     * 设置指示器是否显示 默认显示（VISIBILITY）
      *
      * @param visibility View.GONE,View.VISIBILITY,View.NONE
      */
-    public void setDotsVisility(int visibility) {
+    public CarouselView setDotsVisility(int visibility) {
         llDots.setVisibility(visibility);
+        return this;
+    }
+
+    public CarouselView setIndicatorDotWidth(int width) {
+        IndicatorDotWidth = width;
+        return this;
+    }
+
+    public CarouselView setIndicatorDotSelectedWidth(int width) {
+        IndicatorDotSelectedWidth = width;
+        return this;
+    }
+
+    public CarouselView setIndicatorDotDrawable(@DrawableRes int dotDrawable) {
+        IndicatorDotBackgroundRes = dotDrawable;
+        return this;
     }
 
     /**
@@ -195,8 +225,9 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
      *
      * @param switchTime millseconds
      */
-    public void setSwitchTime(int switchTime) {
+    public CarouselView setSwitchTime(int switchTime) {
         this.switchTime = switchTime;
+        return this;
     }
 
     /**
@@ -313,7 +344,7 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
             params.setMargins(DOT_DEFAULT_W, 0, 0, 0);
             view.setLayoutParams(params);
             view.setSelected(false);
-            view.setBackgroundResource(R.drawable.carousel_layout_dot);
+            view.setBackgroundResource(IndicatorDotBackgroundRes);
             llDots.addView(view);
         }
     }
@@ -358,6 +389,10 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        if (!isSlide) {
+            return true;
+        }
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 flag = MotionEvent.ACTION_DOWN;
@@ -380,11 +415,8 @@ public class CarouselView extends FrameLayout implements ViewPager.OnPageChangeL
                 }
                 break;
         }
-        if (isSlide) {
-            return false;
-        } else {
-            return true;
-        }
+
+        return false;
     }
 
     public interface OnCarouselViewItemClickListener {

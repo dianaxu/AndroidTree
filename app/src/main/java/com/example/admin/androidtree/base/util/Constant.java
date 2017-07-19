@@ -13,4 +13,8 @@ public class Constant {
         public static final String SHARED_NAME = "androidTree_share";
         public static final String TOKEN = "token";
     }
+
+    public static class Extra {
+        public static final String FRAGMENT_INDEX = "com.example.admin.androidtree.FRAGMENT_INDEX";
+    }
 }

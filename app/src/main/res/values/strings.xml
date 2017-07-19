@@ -3,4 +3,26 @@
     <string name="drawer_header_title">Diana</string>
     <string name="menu_home_title">主页</string>
     <string name="menu_setting_title">设置</string>
+    <string name="menu_knowladge_title">知识库</string>
+    <string name="menu_third_title">第三方</string>
+    <string name="tab_default_title">标题</string>
+
+    <!--knowledge fragments tabtitle-->
+    <string name="knowledge_custom_controls_tabtitle">自定义控件</string>
+    <string name="knowledge_animator_tabtitle">动画</string>
+
+    <!--自定义控件  CustomControlsListFragment-->
+    <string name="carouselview_V1_desc">这是轮播图V1.0版，支持本地图片，图片控制（包括滑动，
+        循环滑动，自动播放），指示器的控制（包括显隐，样式），可监控是否滑动到最后一个；
+        默认支持滑动，不支持循环滑动，不支持自动播放；V2.0敬请期待</string>
+
+    <string name="carouselview_V1_text1">1.不支持滑动，循环滑动，自动播放，无事件监控</string>
+    <string name="carouselview_V1_text2">2.不支持滑动，不循环滑动，自动播放，播放|滑动到最后监控</string>
+    <string name="carouselview_V1_text3">3.不支持滑动，循环滑动，不自动播放，播放|滑动到最后监控</string>
+
+    <string name="carouselview_V1_text4">4.支持滑动，不循环滑动，不自动播放，无事件监控</string>
+    <string name="carouselview_V1_text5">5.支持滑动，循环滑动，不自动播放，无事件监控</string>
+    <string name="carouselview_V1_text6">6.支持滑动，不循环滑动，自动播放，无事件监控</string>
+    <string name="carouselview_V1_text7">7.支持滑动，循环滑动，自动播放，无事件监控</string>
+    <string name="carouselview_V1_text8">8.支持滑动，循环滑动，不自动播放，点击事件监听</string>
 </resources>

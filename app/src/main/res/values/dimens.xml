@@ -2,4 +2,45 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!--字体间距离-->
+    <dimen name="text_spacing_3">3dp</dimen>
+
+    <!--图片大小-->
+    <dimen name="image_size_24">24dp</dimen>
+    <dimen name="image_size_40">40dp</dimen>
+    <dimen name="image_size_80">80dp</dimen>
+    <dimen name="image_size_120">120dp</dimen>
+
+    <!--listitem 高度-->
+    <dimen name="item_h_72">72dp</dimen>
+
+    <!--定义字体大小-->
+    <dimen name="display3_text_size">56sp</dimen>
+    <dimen name="display2_text_size">45sp</dimen>
+    <dimen name="display1_text_size">34sp</dimen>
+    <!--标题-->
+    <dimen name="headline_text_size">24sp</dimen>
+    //bar|title
+    <dimen name="title_text_size">21sp</dimen>
+    //副标题|小标题
+    <dimen name="subhead_text_size">17sp</dimen>
+    <dimen name="body_text_size">15sp</dimen>
+    //说明
+    <dimen name="caption_text_size">13sp</dimen>
+    <dimen name="menu_text_size">14sp</dimen>
+    <dimen name="btn_text_size">15sp</dimen>
+
+    <!---->
+    <dimen name="two_pane_width">400dp</dimen>
+    <dimen name="two_pane_width_narrow">200dp</dimen>
+
+    <!--LinearLayout diverheight-->
+    <dimen name="spacing_medium">7dp</dimen>
+
+
+    <!--recycler header  height-->
+    <dimen name="header_height_48">48dp</dimen>
+    <dimen name="header_height_56">56dp</dimen>
 </resources>

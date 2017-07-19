@@ -1,0 +1,32 @@
+{
+  "tagsEntityList": [
+    {
+      "tagsName": "View动画",
+      "tagInfoList": [
+        {
+          "tagIndex": 0,
+          "tagName": "动画1"
+        }
+      ]
+    },
+    {
+      "tagsName": "自定义动画:一般不太用",
+      "tagInfoList": [
+        {
+          "tagIndex": 100,
+          "tagName": "动画2"
+        }
+      ]
+    },
+    {
+      "tagsName": "帧动画",
+      "tagInfoList": [
+        {
+          "tagIndex": 200,
+          "tagName": "动画3"
+        }
+      ]
+    }
+  ]
+}
+
